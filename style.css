@@ -1,0 +1,46 @@
+section {
+    padding: 5px 40px 5px 40px;
+    font-family: "Courier New";
+    font-size: 20px;
+}
+#top-bar {
+    background-color: lightblue;
+}
+#blue-background {
+    background-color: #31485a;
+    padding: 10em 10em 10em 10em;
+}
+li {
+    display:block;
+    list-style-type: none;
+    padding: .5em .25em .5em .25em;
+    font-size: 1em;
+    background-color: white;
+    margin: 1em 0 1em 0;
+    border-radius: .5em;
+}
+#content {
+    background-color: #e1feff;
+    margin-bottom: 2em;
+}
+#input-bar {
+    background-color: lightblue;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border: .1em solid black;
+}
+input {
+    margin: .5em 1em .5em 1em;
+    border-radius: .5em;
+    width: 75%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+
+}
+
+#enter-button {
+    padding: 10px;
+    background-color: white;
+}
