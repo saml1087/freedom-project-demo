@@ -15,24 +15,38 @@
         <h3>Assignments</h3>
         <ul>
           <li>Assignment #1</li>
-          <li>Assignment #2</li>
-          <li>Assignment #3</li>
-          <li>Assignment #4</li>
-          <li>Assignment #4</li>
-          <li>Assignment #4</li>
-          <li>Assignment #4</li>
-          <li>Assignment #4</li>
-          <li>Assignment #4</li>
-          <li>Assignment #999</li>
-          <li>Assignment #1</li>
-          <li>Assignment #1</li>
-          <li>Assignment #1</li>
         </ul>
     </section>
     <section id="input-bar">
-      <input type="text" placeholder='Type in an assignment'>
+      <input name = "input-text" type="text" placeholder='Type in an assignment'>
       <button id="enter-button">Enter</button>
     </section>
+    <button id = "save">Save</button>
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+
+    <script>
+
+      var firebaseConfig = {
+        apiKey: "AIzaSyCSN17mTw0OQj1e0Zh2ss91YSCauPZutxs",
+        authDomain: "homework-organizer-b57ca.firebaseapp.com",
+        projectId: "homework-organizer-b57ca",
+        storageBucket: "homework-organizer-b57ca.appspot.com",
+        messagingSenderId: "717223546912",
+        appId: "1:717223546912:web:9b983b0f82cadfd17c2c45",
+        measurementId: "G-LBYE49M0BN"
+      };
+      firebase.initializeApp(firebaseConfig);
+      // const firebase = require("firebase");
+      // require("firebase/firestore");
+      var db = firebase.firestore();
+      console.log(db);
+    </script>
 
     <script src="script.js"></script>
   </body>
