@@ -7,15 +7,15 @@
   </head>
   <body id="landing-page">
     <!-- HTML -->
-      <h2>Enter your User ID here</h2>
-      <input type="text" name="userName" placeholder="Enter your name here..">
-      <br><br>
-      <input type="text" name="userID" placeholder="userID">
-      <br><br>
-      <button id="login">Log in</button>
-      <p>Dont have one yet? <a id="generate-link" href="landing-page2.html">Click here to generate one!</a></p>
-      <!--<img src="imgs/logo.png">-->
+        <h2>Enter your name here</h2>
+        <input type="text" name="userName" placeholder="Full name here..">
+        <br><br>
+        <h3>THIS IS YOUR ID (Copy it!)</h3>
+        <!--userID-->
+        <p id="userID"></p>
 
+
+        <button id="finish-return">Finish & Return</button>
 
 
     <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
@@ -41,6 +41,7 @@
       var db = firebase.firestore();
       console.log(db);
     </script>
-    <script src="landing-page1.js"></script>
+
+    <script src="landing-page2.js"></script>
   </body>
 </html>

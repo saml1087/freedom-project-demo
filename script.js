@@ -1,15 +1,52 @@
+var db = firebase.firestore();
+
+var userDoc = sessionStorage.getItem("document");
+var userName = sessionStorage.getItem("name");
+
+var content = document.querySelector("#content");
+
+console.log("Username: " + userName);
+console.log("DocumentID: " + userDoc);
 // DOM
 var assignmentText = document.querySelector("input[name='input-text']");
 var enterBtn = document.querySelector("#enter-button");
 var ul = document.querySelector("ul");
+var displayID = document.querySelector("#id-display");
+
+var userDocument = db.collection("users").doc(userDoc);
+userDocument.get().then((doc) => {
+    //js
+    if (doc.data().assignments.length != 0){
+        (doc.data().assignments).forEach(function(assignment){
+            console.log("Assignment Added: " + assignment);
+            // create li from saved document data
+            var li = document.createElement("li");
+            li.addEventListener("click", function(){
+                li.remove();
+            });
+            li.innerHTML = assignment;
+            ul.appendChild(li);
+        });
+    } else {
+        console.log("No assignments");
+    }
+});
 
 function addLi (){
-    console.log(assignmentText.value);
-    var assignmentLi = document.createElement("li");
-    assignmentLi.innerHTML = assignmentText.value;
-    ul.appendChild(assignmentLi);
-    assignmentText.value = "";
+    if (assignmentText.value != ""){
+        console.log(assignmentText.value);
+        var li = document.createElement("li");
+        li.addEventListener("click", function(){
+            li.remove();
+        });
+        li.innerHTML = assignmentText.value;
+        ul.appendChild(li);
+        assignmentText.value = "";
 
+        content.style.height = "100%"
+    } else {
+        console.log("There's no items");
+    }
 }
 enterBtn.addEventListener("click", addLi);
 document.addEventListener("keypress", function(event){
@@ -19,42 +56,23 @@ document.addEventListener("keypress", function(event){
 });
 
 
-// FIREBASE
+    // var assignmentLi = document.createElement("li");
+displayID.innerHTML = "DocumentID: " + userDocument.id; // USER DOCUMENT
 
-// db.collection("users").add({
-//     // Tbd (name)
-// })
-// .then((docRef) => {
-//     //docRef.id = Document ID
-// });
+    // ul.appendChild(assignmentLi);
 
-userDocument = db.collection("users").doc("Test"); // TEST DOCUMENT
+// SAVE FEATURE
+var saveButton = document.querySelector("#save");
 
-    var assignmentLi = document.createElement("li");
-    assignmentLi.innerHTML = userDocument.id; // USER DOCUMENT
-    ul.appendChild(assignmentLi);
-    assignmentText.value = "";
-    var saveButton = document.querySelector("#save");
-
-    saveButton.addEventListener("click", function(){
-        var assignmentsArr = document.querySelectorAll("li");
-        var userAssignments = [];
-        assignmentsArr.forEach(function(li){
-            userAssignments.push(li.innerHTML);
-        });
-        console.log(userAssignments);
-        (userDocument).set({ // USER DOCUMENT
-            name: "Saml1087",
-            userID: userDocument.id, // USER DOCUMENT
-            assignments: userAssignments
-            // assignments: "text"
-        }, {merge: true});
+console.log(userDocument);
+saveButton.addEventListener("click", function(){
+    var listItems = document.querySelectorAll("li");
+    var userAssignments = [];
+    listItems.forEach(function(li){
+        userAssignments.push(li.innerHTML);
     });
-
-document.addEventListener("click", function() {
-    //code
+    (userDocument).set({ // USER DOCUMENT
+        assignments: userAssignments
+    }, {merge: true});
+    console.log(userAssignments);
 });
-// db.collection("users").get().then((querySnapshot) => {
-// //     console.log(querySnapshot);
-// });
-

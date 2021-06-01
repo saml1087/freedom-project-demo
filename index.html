@@ -13,15 +13,17 @@
     </section>
     <section id="content">
         <h3>Assignments</h3>
+        <p id="id-display"></p>
         <ul>
-          <li>Assignment #1</li>
+          <!--<li>Assignment #1</li>-->
         </ul>
+        <button id = "save">Save</button>
     </section>
     <section id="input-bar">
       <input name = "input-text" type="text" placeholder='Type in an assignment'>
       <button id="enter-button">Enter</button>
     </section>
-    <button id = "save">Save</button>
+
 
 
 
@@ -42,12 +44,9 @@
         measurementId: "G-LBYE49M0BN"
       };
       firebase.initializeApp(firebaseConfig);
-      // const firebase = require("firebase");
-      // require("firebase/firestore");
-      var db = firebase.firestore();
-      console.log(db);
     </script>
 
+    <script src="landing-page1.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

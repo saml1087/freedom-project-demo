@@ -3,28 +3,56 @@ section {
     font-family: "Courier New";
     font-size: 20px;
 }
+html, body {
+    height: 100%;
+}
 #top-bar {
-    background-color: lightblue;
+    /*background-color: lightblue;*/
+    background-color: #3b9ad1;
 }
-#blue-background {
-    background-color: #31485a;
-    padding: 10em 10em 10em 10em;
-}
+/*#blue-background {*/
+    /*background-color: #31485a;*/
+/*    background-color: red;*/
+    /*padding: 10em 10em 10em 10em;*/
+/*    width: 20px;*/
+/*}*/
 li {
     display:block;
     list-style-type: none;
     padding: .5em .25em .5em .25em;
     font-size: 1em;
+    font-family: Arial;
     background-color: white;
+    /*background-color: #B0CAE8;*/
     margin: 1em 0 1em 0;
-    border-radius: .5em;
+    border-radius: .25em;
+}
+/*#id-display {*/
+/*    display: absolute;*/
+/*    color: blue;*/
+/*    top: 10px;*/
+/*    right: 20px;*/
+/*}*/
+
+li:hover {
+    text-decoration: line-through;
+    /*color: #ff0000; */
+
+
+
+    background-color: #fafafa;
+    /*background-color: #f7f5f5;*/
+
 }
 #content {
     background-color: #e1feff;
+    /*background-color: #6396D0;*/
+    height: 100%;
     margin-bottom: 2em;
 }
 #input-bar {
-    background-color: lightblue;
+    /*background-color: lightblue;*/
+    background-color: #31485a;
     position: fixed;
     bottom: 0;
     right: 0;
@@ -49,5 +77,12 @@ li {
     background-color: #3b9ad1 ; /*lightblue*/
     color: white;
     padding: 20px;
+}
+#userID {
+    font-size: 1.5em;
+    font-family: "Times New Roman";
+    display: block;
+    border: 2px solid black;
+    width: 300px;
 }
 
