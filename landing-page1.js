@@ -13,9 +13,11 @@ loginButton.addEventListener("click", function(){
                 window.location.href = "index.html";
             } else {
                 console.log("Incorrect Name");
+                alert("No such name. Make sure you have typed it correctly (case-sensitive)");
             }
         } else {
             console.log("Incorrect Doc ID");
+            alert("No such ID Key. Make sure you have copied it correctly. If you don't have one, you can generate one.");
         }
     });
 

@@ -46,6 +46,7 @@ function addLi (){
         content.style.height = "100%"
     } else {
         console.log("There's no items");
+        alert("Nothing to add.");
     }
 }
 enterBtn.addEventListener("click", addLi);
